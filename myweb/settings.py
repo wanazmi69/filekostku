@@ -25,10 +25,12 @@ SECRET_KEY = 'django-insecure-_*nq66iy4kjll3=%=c(hfng^nzzq&3p3y(7z39vw8jvs@0$fx3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-INTERNAL_IPS = [
-    "127.0.0.1",
+ALLOWED_HOSTS = [
+    'kost-malindo.herokuapp.com'
 ]
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]
 
 
 # Application definition
