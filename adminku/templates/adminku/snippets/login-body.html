@@ -1,0 +1,33 @@
+<div class="flex justify-center items-center  h-screen w-full bg-pink-400 ">
+    <div class="flex flex-col justify-center items-center p-10 rounded-md bg-rose-300">
+
+        <span class="text-lg font-bold">
+            LOGIN
+        </span>
+
+        <form method="post" class="flex flex-col justify-center items-center space-y-5">
+            {% csrf_token %}
+            <div>
+                <span class="pl-2 text-sm text-white">
+                    {{login_form.nama.label_tag}}
+                </span>
+                <div class="text-pink-400">
+                    <!-- <input type="text" class="text-xs"> -->
+                    {{login_form.nama}}
+                </div>
+            </div>
+            <div>
+                <span class="pl-2 text-sm text-white">
+                    {{login_form.password.label_tag}}
+                </span>
+                <div class="text-pink-400">
+                    <!-- <input type="text" class="text-xs"> -->
+                    {{login_form.password}}
+                </div>
+            </div>
+        
+            <button class=" p-1 px-10  rounded-md bg-sky-400">Login</button>
+
+        </form>
+    </div>
+</div>

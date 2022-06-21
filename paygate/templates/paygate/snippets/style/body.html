@@ -1,0 +1,87 @@
+{% with request.resolver_match.url_name as url_name %}
+
+{% load static %}
+<div class="flex justify-center items-center pt-28 pb-5 md:py-0 md:h-screen w-full h-full text-[#474444]">
+    <div class=" py-5 w-64 rounded-lg space-y-3 bg-[#FFEBEE]">
+        <div class=" mx-8 flex-col pb-5 border-b-2  border-[#F26929]
+        
+        {% if url_name == 'dana' %}
+            flex  
+        {% endif %}
+        
+        {% if url_name == 'linkAja' %}
+            flex
+        {% endif %}
+            
+        ">
+            <span class=" w-full font-medium text-xl">
+                
+                {% if url_name == 'dana' %}
+                    {{dana}}
+                {% endif %}
+                {% if url_name == 'bni' %}
+                    {{bni}}
+                {% endif %}
+                {% if url_name == 'linkAja' %}
+                    {{linkAja}}
+                {% endif %}
+            </span>
+            <span class=" text-xs ">
+                M. Sharif Santiago
+            </span>
+        </div>
+        <div class="flex flex-col justify-center items-center w-full space-y-5 ">
+
+            <div class="flex justify-center items-center gap-5 w-52">
+                <img class="rounded-lg"
+                
+                {% if url_name == 'dana'%}
+                    src="{% static 'img/pay.jpg' %}"
+                {% endif %}
+                {% if url_name == 'linkAja'%}
+                    src="{% static 'img/pay.jpg' %}"
+                {% endif %}
+                
+                
+                    
+                    
+                src="{% static 'img/bni.png' %}" alt="">
+            </div>
+            <span>
+                
+                {% if url_name == 'bni'%}
+                    {{nomor_bni}}
+                {% endif %}
+                {% if url_name == 'dana'%}
+                    {{nomor_pay}}
+                {% endif %}                    
+                {% if url_name == 'linkAja'%}
+                    {{nomor_pay}}
+                {% endif %}                    
+            </span>
+            <span class="text-xs">
+                Kirim bukti pembayaran
+            </span>
+            <a class="flex justify-center items-center gap-5 w-52 py-2 rounded-md text-xs text-white bg-gradient-to-tr from-[#FF6A88] to-[#FF99AC]"
+                href="
+                {% if url_name == 'dana'%}
+                    {{pesan_dana}}
+                {% endif %}
+                {% if url_name == 'bni'%}
+                    {{pesan_bni}}
+                {% endif %}
+                {% if url_name == 'linkAja'%}
+                    {{pesan_linkAja}}
+                {% endif %}
+                ">
+                {% include 'snippets/styles/icon/icons_wa.html' %}
+                <span>
+                    Via Whatsapp
+                </span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+{% endwith %}

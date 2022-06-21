@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bingkai{
+    border-radius: 20px 20px 20px 60px;
+}
+
+.border-promo {
+    border-radius: 0px 12px;
+}
+
+.coret {
+    text-decoration: line-through;
+}
+
+
+
+
+    .is-active2 {
+        @apply p-1 border-dashed border-2 border-[#FF6A88]
+    }
+
