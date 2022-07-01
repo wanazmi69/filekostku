@@ -25,12 +25,8 @@ SECRET_KEY = 'django-insecure-_*nq66iy4kjll3=%=c(hfng^nzzq&3p3y(7z39vw8jvs@0$fx3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    ''
-]
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -54,7 +50,9 @@ TAILWIND_APP_NAME = 'theme'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.middleware.common.CommonMiddleware',
@@ -130,13 +128,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = 'static/'
 STATICFILES_DIR = [
     BASE_DIR, 'static',
 ]
 STATIC_ROOT = BASE_DIR, 'static'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
