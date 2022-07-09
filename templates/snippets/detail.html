@@ -1,0 +1,60 @@
+<section id="galeri1">
+    {% include 'snippets/styles/detail/detail_header.html' %} 
+    {% load static %}
+    <div id="detail" class="pt-10 md:pt-24">
+
+        <div class=" flex scroll-smooth justify-center items-center text-sm font-medium gap-5" id="btn-menu">
+            <button type="button" id="tombol-detail">Detail</button>
+            <button type="button" id="tombol-fasilitas">Fasilitas</button>
+            <button type="button" id="tombol-peraturan">Peraturan</button>
+            <button type="button" id="tombol-pembayaran">Pembayaran</button>
+
+        </div>
+    </div>
+
+    <div id="detail-carousel" class="splide flex justify-center w-full pb-10" aria-label="Splide Basic HTML Example">
+        <div class="splide__arrows hidden">
+            <button class="splide__arrow splide__arrow--prev">
+                
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+                
+            </button>
+        </div>
+
+        <div class="splide__track  w-80 snap-x scroll-smooth overflow-hidden pb-5">
+
+
+            <ul class="splide__list">
+                <li class="splide__slide">
+                    <div class="splide__list w-80 pt-10 " id="detail_detail">
+                        {% include 'snippets/styles/detail/detail_detail.html' %}
+
+                    </div>
+                </li>
+
+                <li class="splide__slide ">
+                    <div class="flex justify-center w-80 h-52" id="fasilitas">
+                        {% include 'snippets/styles/detail/detail_fasilitas.html' %}
+                    </div>
+                </li>
+                <li class="splide__slide">
+                    <div class="splide__list flex justify-center w-80 pt-10 " id="peraturan">
+                        {% include 'snippets/styles/detail/detail_peraturan.html' %}
+                    </div>
+
+                </li>
+                <li class="splide__slide">
+                    <div class="w-80 pt-10 justify-center items-center" id="pembayaran">
+                        {% include 'snippets/styles/detail/detail_pembayaran.html' %}
+
+                    </div>
+
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    {% include 'snippets/syarat.html' %}
+
+</section>

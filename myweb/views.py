@@ -17,6 +17,7 @@ def index(request):
     bulanan = '500.00'
     tahunan = '5.600.000'
     
+    
     context = {
         'normal': normal,
         'promo': promo,

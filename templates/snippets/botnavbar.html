@@ -1,0 +1,78 @@
+<div class="z-50 md:hidden fixed flex justify-center gap-7 items-center bottom-0 w-full p-3 bg-[#FFEBEE] mobile-menu">
+
+    <a href="#home" class="flex justify-center p-2 gap-2 rounded-lg items-center bg-[#FF6A88]">
+        <div>
+            {% include 'snippets/styles/icon/icons_home.html' %}
+        </div>
+        <span id="btn-home" class="home text-sm text-white pt-1">Home</span>
+    </a>
+    <!--  -->
+    <a href="#galeri1" class="flex  justify-center p-2 gap-2 rounded-lg  items-center bg-[#FF6A88]">
+        <div>
+            {% include 'snippets/styles/icon/icons_galeri.html' %}
+        </div>
+        <span id="btn-galeri" class="galeri1 text-sm text-white pt-1">Galeri</span>
+    </a>
+    <!--  -->
+    <a href="#syarat" class="flex  justify-center p-2 gap-2 rounded-lg items-center bg-[#FF6A88]">
+        <div>
+            {% include 'snippets/styles/icon/icons_centang_lingkaran.html' %}
+        </div>
+        <span id="btn-syarat" class="syarat text-sm text-white pt-1">Syarat</span>
+    </a>
+    <a href="#telepon" class=" flex  justify-center p-2 gap-2 rounded-lg items-center bg-[#FF6A88]">
+        <div>
+            {% include 'snippets/styles/icon/icons_panggil.html' %}
+
+        </div>
+        <span id="btn-services" class="layanan text-sm text-white pt-1">Services</span>
+    </a>
+</div>
+
+
+<script>
+    // // ambil semua elemen tag a 
+    // let tagA = document.querySelectorAll(".mobile-menu a")
+
+    // // ambil semua elemen tag span
+    let tagSpan = document.querySelectorAll(".mobile-menu a span")
+
+    // // sembunyikan semua tulisan menu di tag span
+    tagSpan.forEach(span => span.classList.add("hidden"))
+    document.querySelector(".mobile-menu .home").classList.remove("hidden")
+
+    // // looping tag a
+    // tagA.forEach(a => {
+
+    //     // ketika elemen a di klik
+    //     a.addEventListener("click", () => {
+
+    //         // sembunyikan semua tulisan menu di tag span 
+    //         tagSpan.forEach(span => span.classList.add("hidden"))
+
+    //         // tampilkan hanya span yang sudah diklik
+    //         a.querySelector("span").classList.remove("hidden")
+    //     })
+    // })
+
+    let sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                current = section.getAttribute("id");
+
+            }
+        });
+        // console.log(pageYOffset)
+
+        tagSpan.forEach((span) => {
+            span.classList.add("hidden");
+            if (span.classList.contains(current)) {
+                span.classList.remove("hidden");
+            }
+        });
+    })
+</script>
